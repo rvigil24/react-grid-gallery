@@ -1,0 +1,15 @@
+export const IMAGES = [
+    { id: 1, title: "Lime Green" },
+    { id: 2, title: "Tomato" },
+    { id: 3, title: "Seven Ate Nine" },
+    { id: 4, title: "Crimson" },
+    { id: 5, title: "Crimson" },
+    { id: 6, title: "Crimson" },
+    { id: 7, title: "Crimson" },
+    { id: 8, title: "Crimson" },
+    { id: 9, title: "Crimson" },
+    { id: 10, title: "Crimson" },
+    { id: 11, title: "Crimson" },
+    { id: 12, title: "Crimson" },
+    { id: 13, title: "Crimson" },
+  ];
