@@ -43,7 +43,7 @@ const Modal = () => {
         }}
       >
         <h1>{image.title}</h1>
-        <Image index={image.id} />
+        <Image inModal index={image.id} />
         <button type="button" onClick={back}>
           Close
         </button>

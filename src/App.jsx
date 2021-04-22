@@ -1,6 +1,12 @@
-import React from "react";
+import Routes from "./routes";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
-  return <div>REACT GRID GALLERY</div>;
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 };
+
 export default App;

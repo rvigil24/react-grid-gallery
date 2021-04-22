@@ -7,34 +7,38 @@ import { IMAGES } from "../data";
 
 //components
 import Image from "../components/Image";
+import { UserGrid } from "../components/UserGrid";
 
 const PhotoGrid = styled.div`
-  display:grid;
-  grid-template-columns: repeate(3, 305px);
+  width: 950px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 305px);
+  gap: 20px;
 `;
 
 const Gallery = () => {
   let location = useLocation();
 
   return (
-    <PhotoGrid>
-      {IMAGES.map((i) => (
-        <Link
-          key={i.id}
-          to={{
-            pathname: `/img/${i.id}`,
-            // This is the trick! This link sets
-            // the `background` in location state.
-            state: { background: location },
-          }}
-        >
-          <LazyLoad>
-            <Image index={i.id} />
-          </LazyLoad>
-
-        </Link>
-      ))}
-    </PhotoGrid>
+    <div>
+      <UserGrid />
+      <PhotoGrid>
+        {IMAGES.map((i) => (
+          <Link
+            key={i.id}
+            to={{
+              pathname: `/img/${i.id}`,
+              state: { background: location },
+            }}
+          >
+            <LazyLoad height={305}>
+              <Image index={i.id} />
+            </LazyLoad>
+          </Link>
+        ))}
+      </PhotoGrid>
+    </div>
   );
 };
 
