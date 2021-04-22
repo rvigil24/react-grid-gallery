@@ -35,12 +35,12 @@ export const UserGrid = () => {
       <Photo>
         <ProfileImage />
       </Photo>
-      <Name>Name</Name>
+      <Name>React GridGallery</Name>
       <Label>
         <strong>500</strong> Followers
       </Label>
       <Description>
-        Drinking vinegar woke trust fund, occupy 8-bit kogi taxidermy pop-up
+        Welcome to React GridGallery. Drinking vinegar woke trust fund, occupy 8-bit kogi taxidermy pop-up
         helvetica photo booth. Polaroid health goth lomo af, tumblr hexagon
         small batch hammock fashion axe bespoke keytar skateboard schlitz.
       </Description>
