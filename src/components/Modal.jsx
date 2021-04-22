@@ -1,10 +1,33 @@
 import { useHistory, useParams } from "react-router-dom";
+import styled, { createGlobalStyle } from "styled-components";
 
 //data
 import { IMAGES } from "../data";
 
 //components
-import Image from "../components/Image";
+import Image from "./Image";
+import { PostGridStyled, InfoGridStyled } from "./PostGrid";
+import { MiniUserGrid } from "./UserGrid";
+import { ProfileImage } from "./ProfileImage";
+
+//styled components
+const OverFlowHidden = createGlobalStyle`
+  body {
+    overflow: hidden;
+  }
+`;
+
+const ModalStyled = styled.div`
+  position: absolute;
+  background: #fff;
+  top: ${({ top }) => {
+    console.log(top);
+    return top;
+  }}px;
+  left: 25%;
+  right: 25%;
+  border: 2px solid #444;
+`;
 
 const Modal = () => {
   let history = useHistory();
@@ -27,27 +50,25 @@ const Modal = () => {
         left: 0,
         bottom: 0,
         right: 0,
-        background: "rgba(0, 0, 0, 0.15)",
+        height: "5000px",
+        background: "rgba(0, 0, 0, 0.75)",
       }}
     >
-      <div
-        className="modal"
-        style={{
-          position: "absolute",
-          background: "#fff",
-          top: 25,
-          left: "10%",
-          right: "10%",
-          padding: 15,
-          border: "2px solid #444",
-        }}
-      >
-        <h1>{image.title}</h1>
-        <Image inModal index={image.id} />
-        <button type="button" onClick={back}>
-          Close
-        </button>
-      </div>
+      <ModalStyled top={window.scrollY + window.innerHeight / 2 - 250}>
+        <PostGridStyled>
+          <Image inModal index={image.id} />
+          <InfoGridStyled>
+            <MiniUserGrid>
+              <ProfileImage mini />
+              <h4>Grid Gallery</h4>
+            </MiniUserGrid>
+            <h3>{image.title}</h3>
+            <div>Comments</div>
+            <div>45 Likes</div>
+          </InfoGridStyled>
+          <OverFlowHidden />
+        </PostGridStyled>
+      </ModalStyled>
     </div>
   );
 };

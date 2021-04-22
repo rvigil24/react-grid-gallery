@@ -40,10 +40,16 @@ export const UserGrid = () => {
         <strong>500</strong> Followers
       </Label>
       <Description>
-        Welcome to React GridGallery. Drinking vinegar woke trust fund, occupy 8-bit kogi taxidermy pop-up
-        helvetica photo booth. Polaroid health goth lomo af, tumblr hexagon
-        small batch hammock fashion axe bespoke keytar skateboard schlitz.
+        My name is Ruben Vigil, I'm a developer and welcome to React GridGallery. This is a gallery made with React, React-Router and styled components.
       </Description>
     </UserStyledGrid>
   );
 };
+
+export const MiniUserGrid = styled.div`
+  display: grid;
+  justify-content: left;
+  align-items: center;
+  grid-template-columns: auto auto;
+  gap: 10px;
+`;
