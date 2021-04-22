@@ -40,7 +40,7 @@ export const UserGrid = () => {
         <strong>500</strong> Followers
       </Label>
       <Description>
-        My name is Ruben Vigil, I'm a developer and welcome to React GridGallery. This is a gallery made with React, React-Router and styled components.
+        My name is Ruben Vigil, I'm a developer and welcome to React GridGallery. This is a gallery made with React, React-Router and styled components. 💻👨
       </Description>
     </UserStyledGrid>
   );
