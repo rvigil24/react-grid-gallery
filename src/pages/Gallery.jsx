@@ -1,13 +1,14 @@
 import { useLocation, Link, useRouteMatch } from "react-router-dom";
 import styled, { css } from "styled-components";
-import LazyLoad from "react-lazyload";
 
 //data
 import { IMAGES } from "../data";
 
 //components
-import Image from "../components/Image";
 import { UserGrid } from "../components/UserGrid";
+
+const WEB_URL =
+  process.env.NODE_ENV === "production" ? process.env.WEB_URL_PRODUCTION : process.env.WEB_URL_PRODUCTION;
 
 const PhotoGrid = styled.div`
   display: grid;
@@ -45,7 +46,7 @@ const TabLinkStyled = styled(Link)`
 `;
 
 const ImageLink = styled(Link)`
-  background: no-repeat center/150% url(/img/${({ index }) => index}.jpg);
+  background: no-repeat center/150% url(${WEB_URL}/img/${({ index }) => index}.jpg);
   background-size: cover;
   :hover {
     opacity: 0.7;
@@ -77,6 +78,7 @@ const Gallery = () => {
           to={{ pathname: `${url}`, search: "?type=cascade" }}
         >
           cascade
+          web {WEB_URL}
         </TabLinkStyled>
       </LinkGridStyled>
       <PhotoGrid cascade={galleryCascade}>

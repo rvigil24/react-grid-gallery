@@ -1,4 +1,4 @@
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, useRouteMatch } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 
 //data
@@ -39,6 +39,7 @@ const ModalStyled = styled.div`
 const Modal = () => {
   let history = useHistory();
   let { id } = useParams();
+  const { url } = useRouteMatch();
   let image = IMAGES[parseInt(id, 10) - 1];
 
   if (!image) return null;
@@ -63,7 +64,7 @@ const Modal = () => {
     >
       <ModalStyled top={window.scrollY + window.innerHeight / 2 - 250}>
         <PostGridStyled>
-          <Image inModal index={image.id} />
+          <Image  inModal index={image.id} />
           <InfoGridStyled>
             <MiniUserGrid>
               <ProfileImage mini />
