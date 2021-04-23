@@ -7,9 +7,6 @@ import { IMAGES } from "../data";
 //components
 import { UserGrid } from "../components/UserGrid";
 
-const WEB_URL =
-  process.env.NODE_ENV === "production" ? process.env.WEB_URL_PRODUCTION : process.env.WEB_URL_PRODUCTION;
-
 const PhotoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 305px);
@@ -46,7 +43,7 @@ const TabLinkStyled = styled(Link)`
 `;
 
 const ImageLink = styled(Link)`
-  background: no-repeat center/150% url(${WEB_URL}/img/${({ index }) => index}.jpg);
+  background: no-repeat center/150% url(${({ imgUrl }) => imgUrl});
   background-size: cover;
   :hover {
     opacity: 0.7;
@@ -78,20 +75,21 @@ const Gallery = () => {
           to={{ pathname: `${url}`, search: "?type=cascade" }}
         >
           cascade
-          web {WEB_URL}
         </TabLinkStyled>
       </LinkGridStyled>
       <PhotoGrid cascade={galleryCascade}>
         {IMAGES.map((i) => (
-          <ImageLink
-            cascade={galleryCascade}
-            key={i.id}
-            to={{
-              pathname: `/img/${i.id}`,
-              state: { background: location },
-            }}
-            index={i.id}
-          />
+          <>
+            <ImageLink
+              cascade={galleryCascade}
+              key={i.id}
+              to={{
+                pathname: `/img/${i.id}`,
+                state: { background: location },
+              }}
+              imgUrl={i.url}
+            />
+          </>
         ))}
       </PhotoGrid>
     </div>

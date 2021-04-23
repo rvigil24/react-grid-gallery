@@ -26,13 +26,13 @@ const ModalStyled = styled.div`
   left: 25%;
   right: 25%;
   border: 2px solid #444;
-  @media (max-width: 990px){
+  @media (max-width: 990px) {
     left: 0;
     right: 0;
     width: auto;
     top: ${({ top }) => {
-    return top;
-  }}px;
+      return top;
+    }}px;
   }
 `;
 
@@ -64,7 +64,7 @@ const Modal = () => {
     >
       <ModalStyled top={window.scrollY + window.innerHeight / 2 - 250}>
         <PostGridStyled>
-          <Image  inModal index={image.id} />
+          <Image inModal imgUrl={image.url} />
           <InfoGridStyled>
             <MiniUserGrid>
               <ProfileImage mini />

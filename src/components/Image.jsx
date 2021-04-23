@@ -3,8 +3,7 @@ import styled, { css } from "styled-components";
 const Image = styled.div`
   width: 305px;
   height: 305px;
-  background: no-repeat center/150%
-    url(/img/${({ index }) => index}.jpg);
+  background: no-repeat center/150% url(${({ imgUrl }) => imgUrl});
   ${({ inModal }) =>
     !inModal &&
     css`
@@ -13,8 +12,7 @@ const Image = styled.div`
       }
     `}
   @media (max-width: 990px) {
-    background: no-repeat center
-      url(/img/${({ index }) => index}.jpg);
+    background: no-repeat center url(${({ imgUrl }) => imgUrl});
     background-size: contain;
     width: 100%;
   }
