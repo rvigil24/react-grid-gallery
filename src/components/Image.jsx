@@ -11,6 +11,11 @@ const Image = styled.div`
         opacity: 0.7;
       }
     `}
+  @media (max-width: 990px){
+    background: no-repeat center url(/img/${({ index }) => index}.jpg);
+    background-size: contain;
+    width: 100%;
+  }
 `;
 
 export default Image;

@@ -12,6 +12,14 @@ const UserStyledGrid = styled.div`
     "photo name"
     "photo label"
     "photo description";
+  gap: 15px;
+
+  @media (max-width: 990px) {
+    grid-template-areas:
+      "photo name" "label ."
+      "description .";
+    
+  }
 `;
 
 const Photo = styled.div`
@@ -20,13 +28,27 @@ const Photo = styled.div`
 const Name = styled.div`
   grid-area: name;
   font-size: 35px;
+  align-self: center;
+  @media (max-width: 990px) {
+    font-size: 25px;
+    text-align: left;
+  }
 `;
 const Label = styled.div`
   grid-area: label;
+  @media (max-width: 990px) {
+    padding-left: 25px;
+  }
 `;
 const Description = styled.div`
   grid-area: description;
   max-width: 400px;
+  @media (max-width: 990px) {
+    grid-column: 1 / 3;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
 `;
 
 export const UserGrid = () => {
@@ -40,7 +62,9 @@ export const UserGrid = () => {
         <strong>500</strong> Followers
       </Label>
       <Description>
-        My name is Ruben Vigil, I'm a developer and welcome to React GridGallery. This is a gallery made with React, React-Router and styled components. 💻👨
+        My name is Ruben Vigil, I'm a developer and welcome to React
+        GridGallery. This is a gallery made with React, React-Router and styled
+        components. 💻👨
       </Description>
     </UserStyledGrid>
   );

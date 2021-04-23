@@ -21,12 +21,19 @@ const ModalStyled = styled.div`
   position: absolute;
   background: #fff;
   top: ${({ top }) => {
-    console.log(top);
     return top;
   }}px;
   left: 25%;
   right: 25%;
   border: 2px solid #444;
+  @media (max-width: 990px){
+    left: 0;
+    right: 0;
+    width: auto;
+    top: ${({ top }) => {
+    return top;
+  }}px;
+  }
 `;
 
 const Modal = () => {

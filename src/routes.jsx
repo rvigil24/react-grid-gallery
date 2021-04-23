@@ -1,10 +1,5 @@
 import React from "react";
-import {
-
-  Switch,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 
 //pages
 import Home from "./pages/Home";
@@ -17,17 +12,15 @@ const Routes = () => {
   let background = location.state && location.state.background;
 
   return (
+    <>
+      <Switch location={background || location}>
+        <Route exact path="/" children={<Home />} />
+        <Route path="/gallery" children={<Gallery />} />
+        <Route path="/img/:id" children={<ImageView />} />
+      </Switch>
 
-      <div>
-        <Switch location={background || location}>
-          <Route exact path="/" children={<Home />} />
-          <Route path="/gallery" children={<Gallery />} />
-          <Route path="/img/:id" children={<ImageView />} />
-        </Switch>
-
-        {background && <Route path="/img/:id" children={<Modal />} />}
-      </div>
-
+      {background && <Route path="/img/:id" children={<Modal />} />}
+    </>
   );
 };
 
