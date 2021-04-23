@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-grid-gallery/static/css/main.0be99418.chunk.css",
+    "main.js": "/react-grid-gallery/static/js/main.c52ac1db.chunk.js",
+    "main.js.map": "/react-grid-gallery/static/js/main.c52ac1db.chunk.js.map",
+    "runtime-main.js": "/react-grid-gallery/static/js/runtime-main.c76b812f.js",
+    "runtime-main.js.map": "/react-grid-gallery/static/js/runtime-main.c76b812f.js.map",
+    "static/js/2.c430bec6.chunk.js": "/react-grid-gallery/static/js/2.c430bec6.chunk.js",
+    "static/js/2.c430bec6.chunk.js.map": "/react-grid-gallery/static/js/2.c430bec6.chunk.js.map",
+    "index.html": "/react-grid-gallery/index.html",
+    "static/css/main.0be99418.chunk.css.map": "/react-grid-gallery/static/css/main.0be99418.chunk.css.map",
+    "static/js/2.c430bec6.chunk.js.LICENSE.txt": "/react-grid-gallery/static/js/2.c430bec6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c76b812f.js",
+    "static/js/2.c430bec6.chunk.js",
+    "static/css/main.0be99418.chunk.css",
+    "static/js/main.c52ac1db.chunk.js"
+  ]
+}
